@@ -1,0 +1,169 @@
+{% load static %}
+
+<!DOCTYPE html><html><head>
+        
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fin Sec System</title>
+        <!-- Meta -->
+        <meta name="Content-Language" content="en">
+        <meta name="Keywords" content="AperiSolve, Apérisolve, Aperi'Solve, Apéri'Solve, Zeecka">
+        <meta name="Author" content="Zeecka">
+        <meta name="Robots" content="all">
+        <meta name="theme-color" content="#42f4c5">
+
+        <link rel="icon" type="image/svg+xml" href="{% static 'images/internet-security.png'%}">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+        
+        <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet">
+        
+        <linktype="text/css"  href="{% static 'css/normalize.css' %}" rel="stylesheet">
+        
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">      
+
+        <script type="text/javascript" src="{% static 'js/script_common.js'%}"> </script>
+
+        <script type="text/javascript" src="{% static 'particles.min.js' %}"></script>
+       
+    </head>
+    
+  <!--end of head home_section-->
+
+    <body>
+
+      <div id="particles-js">
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js">
+    
+        </script>
+
+    </div>
+
+<div id="parentmain" class="filtercolor">
+  <div id="parenthome"><!--
+      --><div class="home_section"></div><!--
+      --><div class="home_section">
+      <div id="mainform">
+        <h1 class="highlight">Fin Sec System</h1>
+        
+        <p>Fin Sec is an Intrusion Detection System which immediately alerts you if any maliciuos attack or intrusion has been detected in your bank.</p>
+        
+      </div>
+      <!--end of section 1-->
+
+
+
+      
+      <form  action="{% url 'result' %}" method="POST" >
+        {% csrf_token %}
+      <div id="optionsform">
+
+        <table>
+
+          <tr>
+            <td>num__packets </td>
+          <td>
+                <div>  <input type="number" id='d1' placeholder="packets sent" value="d1"> </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>num__logs</td>
+          <td> 
+            <div>  <input type="number"id='d2' placeholder="logs" value="d2"></div>
+          </td>
+      </tr>
+
+      <tr>
+        <td>num__transaction_duration</td>
+        <td>
+          <div>  <input type="number" id='d3' placeholder="duration of transaction" value="d3"></div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>num__flows</td>
+        <td>
+          <div> <input type="number" id='d4' placeholder="flows" value="d4"></div>
+        </td>
+      </tr>
+      
+      <tr>  
+        <td>is_new_device</td>
+        <td>
+          <div> <input type="number"id='d5' placeholder="is it a new device?" value="d5"></div>
+        </td>
+      </tr>
+
+    </table>
+    
+    <input type="submit" value="submit"><!-- Add this button inside your form -->
+  
+    <button type="button" id="clearButton">Clear</button>
+    
+
+
+
+
+      </div>
+      </form>
+
+
+      <!-- <div id="message" style="display: none;"></div> -->
+</div>
+</div>
+      <!-- <div id="alias">
+        <div class="command">
+          <span class="highlight">$</span> sudo sh -c "$(curl -fs
+          https://aperisolve.com/install.sh)" &amp;&amp;<br>
+          aperisolve <file>
+          <div class="clipboard" data-value="sudo sh -c " $(curl="" -fs="" https:="" www.aperisolve.com="" install.sh)""=""></div>
+        </file></div>
+      </div> -->
+      
+    </div><!--
+      --></div>
+</div>
+      <!--end of section 2-->
+
+
+
+<script src="{% static 'js/jquery.min.js'%}"></script>
+<script src="{% static 'js/script_upload.js'%}"></script>
+
+    <div id="particles-js"></div>
+    <script> $(document).ready(function () {particlesJS.load('particles-js','{% static "particle.js" %}', function () { });
+    });
+    </script>
+
+     <div id="backgroundback"></div>
+    <div id="backgroundfront"></div>
+
+    <script src="{% static 'js/script_common.js'%}"></script> 
+    <script src="{% static 'js/main.js'%}"></script>
+
+  <script src="{% static 'particle.js' %}"></script>
+         
+  
+  <script>
+    // Event listener for the "Clear" button
+    document.getElementById('clearButton').addEventListener('click', function() {
+        clearInputs();
+    });
+    // Function to clear the input fields
+    function clearInputs() {
+        document.getElementById('d1').value = '';
+        document.getElementById('d2').value = '';
+        document.getElementById('d3').value = '';
+        document.getElementById('d4').value = '';
+        document.getElementById('d5').value = '';
+    }
+</script>
+  
+
+    </body>
+    
+    </html>

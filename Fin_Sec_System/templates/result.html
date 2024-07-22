@@ -1,0 +1,211 @@
+{% load static %}
+
+<!DOCTYPE html><html><head>
+        
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% comment %} <title>Fin Sec System</title> {% endcomment %}
+        <!-- Meta -->
+        <meta name="Content-Language" content="en">
+        <meta name="Keywords" content="AperiSolve, Apérisolve, Aperi'Solve, Apéri'Solve, Zeecka">
+        <meta name="Author" content="Zeecka">
+        <meta name="Robots" content="all">
+        <meta name="theme-color" content="#42f4c5">
+
+        <link rel="icon" type="image/svg+xml" href="{% static 'images/internet-security.png'%}">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+        
+        <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet">
+        
+        <linktype="text/css"  href="{% static 'css/normalize.css' %}" rel="stylesheet">
+        
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">      
+
+        <script type="text/javascript" src="{% static 'js/script_common.js'%}"> </script>
+
+        <script type="text/javascript" src="{% static 'particles.min.js' %}"></script>
+       
+    </head>
+    
+  <!--end of head home_section-->
+
+    <body>
+
+      <div id="particles-js">
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js">
+    
+        </script>
+
+    </div>
+
+<div id="parentmain" class="filtercolor">
+  <div id="parenthome"><!--
+      --><div class="home_section"></div><!--
+      --><div class="home_section">
+      <div id="mainform">
+
+        {% comment %} {% if intrusion_detected %}
+        <h1 class="highlight">Intrusion Detected!!!</h1>
+    {% else %}
+        <h1 class="highlight">Intrusion not Detected</h1>
+    {% endif %} {% endcomment %}
+    {% if intrusion_detected %}
+    <h1 class="highlight">Intrusion Detected!!!</h1>
+    {% comment %} <h2>Other details: </h2>
+    <ul>
+        <li><strong>IP Address:</strong> {{ random_data.ip_address }}</li>
+        <li><strong>Transaction Type:</strong> {{ random_data.transaction_type }}</li>
+        <li><strong>Time:</strong> {{ random_data.time }}</li>
+        <li><strong>Device ID:</strong> {{ random_data.device_id }}</li>
+        <li><strong>Location:</strong> {{ random_data.location }}</li>
+    </ul> {% endcomment %}
+    <li><strong>IP Address:</strong> <span id="ipAddress"></span></li>
+    <li><strong>Transaction Type:</strong> <span id="transactionType"></span></li>
+    <li><strong>Time:</strong> <span id="time"></span></li>
+    
+    <li><strong>Location:</strong> <span id="location"></span></li>
+
+{% else %}
+    <h1 class="highlight">Intrusion not Detected</h1>
+{% endif %}
+ <!--end of section 1-->
+
+
+
+
+      {% comment %} <form  action="predict.html" method="post" >
+      <div id="optionsform">
+
+        <table>
+
+          <tr>
+            <td>no of packets </td>
+          <td>
+                <div>  <input type="number" placeholder="packets sent" value="d1"> </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>num__logs</td>
+          <td> 
+            <div>  <input type="number" placeholder="logs" value="d2"></div>
+          </td>
+      </tr>
+
+      <tr>
+        <td>num__transaction_duration</td>
+        <td>
+          <div>  <input type="number" placeholder="duration of transaction" value="d3"></div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>num__flows</td>
+        <td>
+          <div> <input type="number" placeholder="flows" value="d4"></div>
+        </td>
+      </tr>
+      
+      <tr>  
+        <td>is_new_device</td>
+        <td>
+          <div> <input type="number" placeholder="is it a new device?" value="d5"></div>
+        </td>
+      </tr>
+
+    </table>
+    
+    <input type="submit" value="submit">
+
+
+      </div>
+      </form>
+
+
+      <!-- <div id="message" style="display: none;"></div> -->
+</div>
+</div> {% endcomment %}
+      <!-- <div id="alias">
+        <div class="command">
+          <span class="highlight">$</span> sudo sh -c "$(curl -fs
+          https://aperisolve.com/install.sh)" &amp;&amp;<br>
+          aperisolve <file>
+          <div class="clipboard" data-value="sudo sh -c " $(curl="" -fs="" https:="" www.aperisolve.com="" install.sh)""=""></div>
+        </file></div>
+      </div> -->
+      
+    </div><!--
+      --></div>
+</div>
+      <!--end of section 2-->
+
+
+
+<script src="{% static 'js/jquery.min.js'%}"></script>
+<script src="{% static 'js/script_upload.js'%}"></script>
+
+    <div id="particles-js"></div>
+    <script> $(document).ready(function () {particlesJS.load('particles-js','{% static "particle.js" %}', function () { });
+    });
+    </script>
+
+     <div id="backgroundback"></div>
+    <div id="backgroundfront"></div>
+
+    <script src="{% static 'js/script_common.js'%}"></script> 
+    <script src="{% static 'js/main.js'%}"></script>
+
+  <script src="{% static 'particle.js' %}"></script>
+  <script>
+    $(document).ready(function() {
+        // Function to generate random characteristics
+        function generateRandomCharacteristics() {
+            var characteristics = {};
+
+            // Random IP Addresses
+            var ipAddresses = ['192.168.1.1', '10.0.0.1', '172.16.0.1', '203.0.113.0'];
+            characteristics.ipAddress = ipAddresses[Math.floor(Math.random() * ipAddresses.length)];
+
+            // Random Transaction Types
+            var transactionTypes = ['Credit', 'Debit'];
+            characteristics.transactionType = transactionTypes[Math.floor(Math.random() * transactionTypes.length)];
+
+            // Random Time
+            var times = ['2024-04-14 10:00:00', '2024-04-14 10:05:00', '2024-04-14 10:10:00'];
+            characteristics.time = times[Math.floor(Math.random() * times.length)];
+
+            // Random Location
+            var locations = ['Local', 'Foreign'];
+            characteristics.location = locations[Math.floor(Math.random() * locations.length)];
+
+            return characteristics;
+        }
+
+        // Function to display characteristics
+        function displayCharacteristics(intrusion_detected) {
+            if (intrusion_detected) {
+                var randomData = generateRandomCharacteristics();
+                {% comment %} $('#intrusionMessage').text('Intrusion Detected!!!'); {% endcomment %}
+                $('#ipAddress').text(randomData.ipAddress);
+                $('#transactionType').text(randomData.transactionType);
+                $('#time').text(randomData.time);
+                $('#location').text(randomData.location);
+            } else {
+                $('#intrusionMessage').text('Intrusion not Detected');
+            }
+        }
+
+        // Call the displayCharacteristics function when the page loads
+        var intrusion_detected = true; // Example value, replace it with your actual variable value
+        displayCharacteristics(intrusion_detected);
+    });
+</script>
+
+
+    </body>
+    
+    </html>
